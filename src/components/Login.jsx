@@ -3,9 +3,10 @@ import { useState,useRef } from "react";
 import { checkValidateData } from "../utils/validate";
 import {  createUserWithEmailAndPassword,signInWithEmailAndPassword,updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from '../utils/userSlice'
+import { ProfileIMG } from "../utils/constants";
 
 //import { createUserWithEmailAndPassword } from "firebase/auth";
 //import {auth} from "../utils/firebase"
@@ -17,7 +18,7 @@ const Login=()=>{
   const password=useRef(null);
   const name=useRef(null)
   const dispatch=useDispatch()
-  const navigate=useNavigate()
+  
   const handleSingin=()=>{
     setIsSigninForm(!isSigninForm);
     setErrorMess(null)
@@ -37,12 +38,12 @@ createUserWithEmailAndPassword(auth, email.current.value, password.current.value
     // Signed up 
     const user = userCredential.user;
     updateProfile(auth.currentUser, {
-  displayName: name.current.value, photoURL: "https://avatars.githubusercontent.com/u/12824231?v=4"
+  displayName: name.current.value, photoURL:ProfileIMG
 }).then(() => {
   // Profile updated!
   const {uid,email,displayName,photoURL} = auth.currentUser;
   dispatch(addUser({uid:uid,email:email,displayName:displayName,photoURL:photoURL}))
-   navigate("/browse")
+  
 }).catch((error) => {
   // An error occurred
   setErrorMess(error.message)
@@ -64,8 +65,8 @@ createUserWithEmailAndPassword(auth, email.current.value, password.current.value
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    console.log(user);
-    navigate("/browse")
+    
+ 
     // ...
   })
   .catch((error) => {
