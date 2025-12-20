@@ -7,10 +7,13 @@ import useTopRatedMovies from '../hooks/useTopRatedMovies'
 import usePopularMovies from '../hooks/usePopularMovies'
 import useUpcomingMovies from '../hooks/useUpcomingMovies'
 import useTrendingMovies from '../hooks/useTrendingMovies'
+import GptSearchPage from './GptSearchPage'
+import { useSelector } from 'react-redux'
 
 
 //We used custom hook for easy and clean code readability
 const Browse = () => {
+  const showGptSearch=useSelector(store=>store.gpt.showGptSearch)
  useNowPlayingMovies()
  useTopRatedMovies()
  usePopularMovies()
@@ -19,8 +22,15 @@ const Browse = () => {
   return (
     <div>
       <Header/>
-      <MainContainer/>
+      {
+        showGptSearch? <GptSearchPage/>:
+        <>
+        <MainContainer/>
       <SecondaryContainer/>
+        </>
+      }
+     
+      
     </div>
   )
 }
