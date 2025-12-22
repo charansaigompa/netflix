@@ -7,11 +7,11 @@ import lang from '../utils/languageConstants'
 
 const GptSearchPage = () => {
   return (
-    <div>
+    <div >
 
-      <h1>GPT Search Page</h1>
-      <div className='absolute -z-10'>
-        <img src={BG_URL} alt="" />
+      
+      <div className='fixed -z-10'>
+        <img className='w-screen' src="https://i.vimeocdn.com/video/793529939-a4cbfc3f5767d848613512b0e29c3fda475343fff88130a6df49575d3849a720-d" alt="" />
       </div>
       <GptSearchBar/>
       <GptMovieSuggestions/>

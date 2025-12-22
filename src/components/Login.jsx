@@ -24,8 +24,7 @@ const Login=()=>{
     setErrorMess(null)
   }
   const handleButtonClick=()=>{
-    console.log(email.current.value);
-    console.log(password.current.value);
+    
    const message= checkValidateData(email.current.value,password.current.value);
     setErrorMess(message);
     if(message) return;
@@ -49,7 +48,7 @@ createUserWithEmailAndPassword(auth, email.current.value, password.current.value
   setErrorMess(error.message)
 });
 
-    console.log(user);
+   
    
     // ...
   })
