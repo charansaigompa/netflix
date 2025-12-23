@@ -31,9 +31,9 @@ const searchMovieTMDb= async(movie)=>{
 }
 
   return (
-    <div className='pt-[10%] flex justify-center'>
+    <div className=' pt-[35%]  md:pt-[10%] flex justify-center'>
        
-        <form action="" className='w-1/2 bg-black grid grid-cols-12 rounded-2xl' onSubmit={(e)=>e.preventDefault()}>
+        <form action="" className='w-full md:w-1/2 bg-black grid grid-cols-12 rounded-2xl' onSubmit={(e)=>e.preventDefault()}>
             <input ref={searchText} className='p-4 m-2 col-span-10 bg-amber-50 rounded-xl' type="text" placeholder={lang[languageKey]. gptSearchPlaceholder}/>
             <button onClick={handleGptSearchClick} className='col-span-2 m-2 py-2 px-4 bg-red-700 text-white rounded-lg'>{lang[languageKey].search}</button>
         </form>

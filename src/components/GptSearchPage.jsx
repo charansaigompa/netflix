@@ -3,21 +3,36 @@ import GptSearchBar from './GptSearchBar'
 import GptMovieSuggestions from './GptMovieSuggestions'
 import { BG_URL } from '../utils/constants'
 import lang from '../utils/languageConstants'
+import { useSelector } from "react-redux";
+import SearchVideoBackground from "./SearchVideoBackground";
 
 
 const GptSearchPage = () => {
+  const movieId = useSelector(
+    (store) => store.search.searchTrailerMovieId
+  );
+
   return (
-    <div >
-
-      
-      <div className='fixed -z-10'>
-        <img className='w-screen' src="https://i.vimeocdn.com/video/793529939-a4cbfc3f5767d848613512b0e29c3fda475343fff88130a6df49575d3849a720-d" alt="" />
-      </div>
-      <GptSearchBar/>
-      <GptMovieSuggestions/>
-
+    <>
+    
+       <div className="fixed inset-0 -z-10">
+      <img
+        className="h-full w-full object-cover"
+        src="https://preview.redd.it/does-anyone-know-how-to-create-the-netflix-colored-lines-v0-zp69f0bdm13e1.jpeg?width=640&crop=smart&auto=webp&s=e8a501ff6eca78eaaa609f4b1c49eb0f232869fc"
+        alt="background"
+      />
     </div>
-  )
-}
+      {movieId ? (
+        <SearchVideoBackground />
+      ) : (
+        <>
+          <GptSearchBar />
+          <GptMovieSuggestions />
+        </>
+      )}
+      
+    </>
+  );
+};
 
-export default GptSearchPage
+export default GptSearchPage;

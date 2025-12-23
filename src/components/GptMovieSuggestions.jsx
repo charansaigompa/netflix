@@ -8,8 +8,8 @@ const GptMovieSuggestions = () => {
   console.log(searchedMovies)
   if(!searchedMovies) return null;
   return (
-    <div className='overflow-x-hidden w-full'>
-    <div className='p-4 m-4 bg-[#141414]/90 rounded-xl'>
+    <div className=''>
+    <div className=' p-4 m-4 bg-[#141414]/90 rounded-xl'>
        <SearchCard title={"Search Results"} movies={searchedMovies[0]}/>
       
     </div>

@@ -9,7 +9,7 @@ const MovieList = ({title,movies}) => {
         
         <div className='flex'>
             {movies?.map((movie, index) => (
-  <MovieCard key={index} posterPath={movie.poster_path} />
+  <MovieCard key={index} posterPath={movie.poster_path} movieId={movie.id}  />
 ))}
         </div>
       </div>
