@@ -102,7 +102,7 @@ createUserWithEmailAndPassword(auth, email.current.value, password.current.value
             className="w-full p-3.5 my-4 bg-gray-600/60 rounded-sm" 
             placeholder="Password" />
              {
-              !isSigninForm&&( <input type="text" 
+              !isSigninForm&&( <input type="password" 
             className="w-full p-3.5 my-4 bg-gray-600/60 rounded-sm"
              placeholder="Confirm  Password" />)
              }
