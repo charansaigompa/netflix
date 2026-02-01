@@ -10,9 +10,9 @@ import { getAnalytics } from "firebase/analytics";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyB2T9ENrCMeKkiaEDjtP5ccyLKbJCsyn8k",
-  authDomain: "moviesgpt-46067.firebaseapp.com",
-  projectId: "moviesgpt-46067",
-  storageBucket: "moviesgpt-46067.firebasestorage.app",
+  authDomain: "moviesgeneral-46067.firebaseapp.com",
+  projectId: "moviesgeneral-46067",
+  storageBucket: "moviesgeneral-46067.firebasestorage.app",
   messagingSenderId: "185867314318",
   appId: "1:185867314318:web:e9134be25f87419101d5df",
   measurementId: "G-2WT8WNHTNT"

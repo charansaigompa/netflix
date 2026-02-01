@@ -7,14 +7,14 @@ import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { onAuthStateChanged } from "firebase/auth";
 import { LOGO } from "../utils/constants";
-import { toggleGptSearch } from "../utils/gptSlice";
+import { togglegeneralSearch } from "../utils/generalSlice";
 import { SUPPORTED_LANGUAGES } from "../utils/constants";
 import { changeLanguage } from "../utils/configSlice";
 
 const Header = () => {
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
-  const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
+  const showgeneralSearch = useSelector((store) => store.general.showgeneralSearch);
   const dispatch = useDispatch();
   const handleSignout = () => {
     signOut(auth)
@@ -53,8 +53,8 @@ const Header = () => {
     return () => unsubscribe();
   }, []);
 
-  const handleGptSearchClick = () => {
-    dispatch(toggleGptSearch());
+  const handlegeneralSearchClick = () => {
+    dispatch(togglegeneralSearch());
   };
   const handleLanguageChange = (e) => {
     dispatch(changeLanguage(e.target.value));
@@ -64,7 +64,7 @@ const Header = () => {
       <img className="w-50 mx-auto md:mx-0" src={LOGO} alt="logo" />
       {user && (
         <div className="flex justify-center mb-2 p-2">
-          {showGptSearch && (
+          {showgeneralSearch && (
             <select
               onChange={handleLanguageChange}
               name=""
@@ -79,10 +79,10 @@ const Header = () => {
             </select>
           )}
           <button
-            onClick={handleGptSearchClick}
+            onClick={handlegeneralSearchClick}
             className="h-9 px-4 mx-6 my-3 bg-purple-800 text-white rounded-lg"
           >
-            {showGptSearch?"Home":" Search"}
+            {showgeneralSearch?"Home":" Search"}
           </button>
           <img className="w-12 rounded-lg h-12" src={user.photoURL} alt="" />
           <button onClick={handleSignout} className="h-9 px-4 mx-6 my-3 bg-red-700 text-white rounded-lg">

@@ -4,10 +4,10 @@ const ShimmerForVideo = () => {
   return (
    <div className="relative w-screen aspect-video bg-zinc-900 overflow-hidden">
 
-  {/* Base background */}
+  
   <div className="absolute inset-0 bg-zinc-900" />
 
-  {/* Shimmer layer */}
+
   <div
     className="absolute inset-0
                bg-gradient-to-r
@@ -15,7 +15,7 @@ const ShimmerForVideo = () => {
                animate-pulse"
   />
 
-  {/* Play button (TOP LAYER) */}
+ 
   <div className="absolute inset-0 z-10 flex items-center justify-center">
     <div
       className="w-20 h-20 rounded-full
@@ -24,7 +24,7 @@ const ShimmerForVideo = () => {
                  flex items-center justify-center
                  animate-pulse"
     >
-      {/* Play triangle */}
+     
       <div
         className="ml-1
                    w-0 h-0

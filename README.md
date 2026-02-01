@@ -1,4 +1,4 @@
-# Netflix-gpt
+# Netflix-general
 -npm vite@latest
 -install tailwind css v4
 # Features
@@ -14,6 +14,6 @@
         -Movie Suggestions
             -Movie Lista*n
             
-- Netflix Gpt
+- Netflix general
    -Search bar
    -Movie suggestions
